@@ -1,0 +1,24 @@
+.tabs{
+  width: 100%;
+}
+.tab{
+  border: 0px;
+  color: black;
+  width: 200px;
+  height: 50px;
+  background-color: #C4C4C4;
+  margin: -5px;
+  font-size: 20px;
+  border-radius: 10px 10px 0px 0px;
+  transition: background-color 0.5s;
+}
+.tab:hover{
+  background-color: #9E9E9E;
+}
+.main{
+  width: 690px;
+  height: 380px;
+  background: #C4C4C4;
+  margin-left: -5px;
+  margin-top: 5px;
+}
