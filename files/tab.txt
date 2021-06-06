@@ -1,0 +1,6 @@
+<div class="t">
+  <button type="button" id='tab1' class='tab' name="button">План1</button>
+  <button type="button" class="button" id="rename_bt" onclick="rename()" name="button">
+    <img src="img/pencil.png" alt="">
+  </button>
+</div>
