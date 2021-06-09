@@ -18,8 +18,8 @@ if os.listdir(path):
     eel.load(plans)
 
 @eel.expose
-def savename(newname, oldname):
-    os.rename(filespath + oldname, filespath + newname)
+def savename(oldname, newname):
+    os.rename(path + oldname, path + newname)
 
 @eel.expose
 def read_file(path):

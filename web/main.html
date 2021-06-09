@@ -8,53 +8,55 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="eel.js"></script>
+    <script type="text/javascript">
+        isft = true;
+        isplan = 0
+        oldnames = []
+        plans = []
+        eel.expose(load)
+        function load(plans2) {
+          plans = plans2.split(' ')
+          for (var i = 1; i < plans.length; i++) {
+            if (isft){
+              tab = '<div class="ft">\
+                <button type="button" id="tab0" class="tab" onclick="output(\''+ plans[isplan] +'\')" name="button">'+ plans[isplan] +'</button>\
+                <button type="button" class="button" id="rename_bt'+ isplan +'" onclick="rename(\''+ plans[isplan] +'\',\''+ isplan +'\')" name="button">\
+                  <img src="img/pencil.png" alt="">\
+                </button>\
+              </div>\
+              ';
+              oldtabs = document.getElementById('tabs').innerHTML;
+              document.getElementById('tabs').innerHTML = oldtabs + tab;
+              isft = false
+              isplan++
+
+            }
+            else{
+              tab = '<div class="t">\
+                <button type="button" id="tab' + isplan + '" class="tab" onclick="output(\''+ plans[isplan] +'\')" name="button">'+ plans[isplan] +'</button>\
+                <button type="button" class="button" id="rename_bt'+ isplan +'" onclick="rename(\''+ plans[isplan] +'\',\''+ isplan +'\')" name="button">\
+                  <img src="img/pencil.png" alt="">\
+                </button>\
+              </div>\
+              ';
+              oldtabs = document.getElementById('tabs').innerHTML;
+              document.getElementById('tabs').innerHTML = oldtabs + tab;
+              isft = false
+              isplan++
+
+            }
+        }}
+
+
+    </script>
+
 </head>
 <body>
   <div class="tabs" id="tabs">
-    <button type="button" onclick="add()" class="add_bt" name="button"><img width="30px" height="30px" src="img/add.png"></button>
+    <button type="button" onclick="add(plans)" class="add_bt" name="button"><img width="30px" height="30px" src="img/add.png"></button>
   </div>
 
-  <div class="main">
+  <div class="main" id='main'>
   </div>
-  <script type="text/javascript">
-      isft = true;
-      isplan = 0
-      oldnames = []
-      eel.expose(load)
-      function load(plans) {
-        plans = plans.split(' ')
-        for (var i = 1; i < plans.length; i++) {
-          if (isft){
-            tab = '<div class="ft">\
-              <button type="button" id="tab0" class="tab" name="button">'+ plans[isplan] +'</button>\
-              <button type="button" class="button" id="rename_bt" onclick="rename('+ plans[isplan] +', '+ isplan +')" name="button">\
-                <img src="img/pencil.png" alt="">\
-              </button>\
-            </div>\
-            ';
-            oldtabs = document.getElementById('tabs').innerHTML;
-            document.getElementById('tabs').innerHTML = oldtabs + tab;
-            isft = false
-            isplan++
-
-          }
-          else{
-            tab = '<div class="t">\
-              <button type="button" id="tab' + isplan + '" class="tab" name="button">'+ plans[isplan] +'</button>\
-              <button type="button" class="button" id="rename_bt" onclick="rename(+ 'plans[isplan] +', '+ isplan +')" name="button">\
-                <img src="img/pencil.png" alt="">\
-              </button>\
-            </div>\
-            ';
-            oldtabs = document.getElementById('tabs').innerHTML;
-            document.getElementById('tabs').innerHTML = oldtabs + tab;
-            isft = false
-            isplan++
-
-          }
-      }}
-
-
-  </script>
 </body>
 </html>
