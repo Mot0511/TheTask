@@ -21,10 +21,14 @@ if os.listdir(path):
 def savename(oldname, newname):
     os.rename(path + oldname, path + newname)
 
+# @eel.expose
+# def read_file(path):
+#     file = open(path, 'r').read()
+#     return '1'
+
 @eel.expose
-def read_file(path):
-    file = open(path, 'r').read()
-    return '1'
+def del_plan(name):
+    os.remove(path + name + format)
 
 @eel.expose
 def newplan(name):

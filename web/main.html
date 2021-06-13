@@ -18,7 +18,7 @@
           plans = plans2.split(' ')
           for (var i = 1; i < plans.length; i++) {
             if (isft){
-              tab = '<div class="ft">\
+              tab = '<div class="ft" id="'+ plans[isplan] +'">\
                 <button type="button" id="tab0" class="tab" onclick="output(\''+ plans[isplan] +'\')" name="button">'+ plans[isplan] +'</button>\
                 <button type="button" class="button" id="rename_bt'+ isplan +'" onclick="rename(\''+ plans[isplan] +'\',\''+ isplan +'\')" name="button">\
                   <img src="img/pencil.png" alt="">\
@@ -32,7 +32,7 @@
 
             }
             else{
-              tab = '<div class="t">\
+              tab = '<div class="t" id="'+ plans[isplan] +'">\
                 <button type="button" id="tab' + isplan + '" class="tab" onclick="output(\''+ plans[isplan] +'\')" name="button">'+ plans[isplan] +'</button>\
                 <button type="button" class="button" id="rename_bt'+ isplan +'" onclick="rename(\''+ plans[isplan] +'\',\''+ isplan +'\')" name="button">\
                   <img src="img/pencil.png" alt="">\
@@ -58,5 +58,14 @@
 
   <div class="main" id='main'>
   </div>
+  <div class="menu" id="menu">
+    <button type="button" class="del_bt" id="del_bt" onclick="del()" name="button"><img src="img/trash.png"></button>
+  </div>
+  <script type="text/javascript">
+  setTimeout(function menu() {
+    document.getElementById('menu').style = 'margin-left: -10px;';
+  }, 1)
+
+  </script>
 </body>
 </html>

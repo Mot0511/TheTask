@@ -3,8 +3,8 @@ plans = []
 function add(plans2) {
   plans = plans2
   if (isft){
-    tab = '<div class="ft">\
-      <button type="button" id="tab0" class="tab" name="button">план0</button>\
+    tab = '<div class="ft" id="план0">\
+      <button type="button" id="tab0"  onclick="output(\'план0\')" class="tab" name="button">план0</button>\
       <button type="button" class="button" id="rename_bt'+ isplan +'" onclick="rename(\'план0\',\''+ isplan +'\')" name="button">\
         <img src="img/pencil.png" alt="">\
       </button>\
@@ -18,8 +18,10 @@ eel.newplan('план' + isplan)
 isplan++
   }
   else{
-    tab = '<div class="t">\
-    <button type="button" id="tab'+ isplan +'" class="tab" name="button">план' + isplan + '</button>\
+    console.log(plans)
+    console.log(isplan)
+    tab = '<div class="t" id="'+ plans[isplan - 1] +'">\
+    <button type="button" id="tab'+ isplan +'"  onclick="output(\''+ plans[isplan - 1] +'\')" class="tab" name="button">план' + isplan + '</button>\
       <button type="button" class="button" id="rename_bt'+ isplan +'" onclick="rename(\''+ plans[isplan - 1] +'\',\''+ isplan +'\')" name="button">\
         <img src="img/pencil.png" alt="">\
       </button>\
@@ -57,4 +59,13 @@ function rename(oldname, idname) {
 }
 function output(name) {
   document.getElementById('main').innerHTML = name
+  document.getElementById('del_bt').setAttribute('onclick', 'del(\''+ name +'\')')
+
+}
+function del(name) {
+    tab = document.getElementById(name)
+    console.log(name)
+    tab.setAttribute('style', 'display: none;')
+    eel.del_plan(name)
+    document.getElementById('main').innerHTML = ''
 }
