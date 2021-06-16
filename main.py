@@ -8,7 +8,7 @@ eel.init('web')
 path = 'C:/TheTaskPlans/'
 format = '.txt'
 
-if os.path.exists(testpath):
+if os.path.exists(path):
     if os.listdir(path):
         files = os.listdir(path)
         plans = ''
@@ -19,7 +19,7 @@ if os.path.exists(testpath):
         eel.load(plans)
 
 else:
-    
+    os.mkdir(path)
 
 @eel.expose
 def savename(oldname, newname):
