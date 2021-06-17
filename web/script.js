@@ -58,8 +58,8 @@ function rename(oldname, idname) {
   }
 }
 function output(name) {
-  document.getElementById('main').innerHTML = name
-  document.getElementById('del_bt').setAttribute('onclick', 'del(\''+ name +'\')')
+    document.getElementById('del_bt').setAttribute('onclick', 'del(\''+ name +'\')')
+    eel.load_tasks(name)
 
 }
 function del(name) {

@@ -46,6 +46,24 @@
 
             }
         }}
+        eel.expose(load_tasks)
+        function load_tasks(tasks) {
+            // add_task_bt = '<button type="button" class="task_bt" onclick="add_task()" name="button">Добавить задачу</button>
+            // <div class="tasks" id="tasks">
+            //
+            // </div>
+            // '
+            // document.getElementById('main').innerHTML = add_task_bt
+            document.getElementById('tasks').innerHTML = ''
+            for (var i = 0; i < tasks.length; i++) {
+              newtask = '<div class="task">\
+              <h3>'+ tasks[i] +'</h3>\
+              </div>\
+              '
+              oldtasks = document.getElementById('tasks').innerHTML
+              document.getElementById('tasks').innerHTML = oldtasks + newtask
+            }
+        }
 
 
     </script>
@@ -57,13 +75,14 @@
   </div>
 
   <div class="main" id='main'>
-    <button type="button" class="task_bt" name="button">Добавить задачу</button>
-    <div class="task">
-      <h3>Новая задача</h3>
+    <button type="button" class="task_bt" onclick="add_task()" name="button">Добавить задачу</button>
+    <div class="tasks" id="tasks">
+
     </div>
   </div>
   <div class="menu" id="menu">
     <button type="button" class="del_bt" id="del_bt" onclick="del()" name="button"><img src="img/trash.png"></button>
+
   </div>
   <script type="text/javascript">
   setTimeout(function menu() {

@@ -21,6 +21,9 @@ if os.path.exists(path):
 else:
     os.mkdir(path)
 
+
+
+
 @eel.expose
 def savename(oldname, newname):
     os.rename(path + oldname, path + newname)
@@ -38,6 +41,14 @@ def del_plan(name):
 def newplan(name):
     file = open(path + name + format, 'w')
     file.close()
+
+@eel.expose
+def load_tasks(name):
+    tasks = []
+    with open(path + name + format, 'r') as f:
+        tasks = f.read().splitlines()
+
+    eel.load_tasks(tasks)
 
 
 
