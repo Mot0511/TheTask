@@ -59,6 +59,11 @@ function rename(oldname, idname) {
 }
 function output(name) {
     document.getElementById('del_bt').setAttribute('onclick', 'del(\''+ name +'\')')
+    main_content = '<button type="button" class="task_bt" onclick="add_task(\''+ name +'\')" name="button">Добавить задачу</button>\
+    <div class="tasks" id="tasks">\
+    </div>\
+    '
+    document.getElementById('main').innerHTML = main_content
     eel.load_tasks(name)
 
 }
@@ -68,4 +73,7 @@ function del(name) {
     tab.setAttribute('style', 'display: none;')
     eel.del_plan(name)
     document.getElementById('main').innerHTML = ''
+}
+function add_task(name) {
+  
 }

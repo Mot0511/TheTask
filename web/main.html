@@ -48,12 +48,7 @@
         }}
         eel.expose(load_tasks)
         function load_tasks(tasks) {
-            // add_task_bt = '<button type="button" class="task_bt" onclick="add_task()" name="button">Добавить задачу</button>
-            // <div class="tasks" id="tasks">
-            //
-            // </div>
-            // '
-            // document.getElementById('main').innerHTML = add_task_bt
+
             document.getElementById('tasks').innerHTML = ''
             for (var i = 0; i < tasks.length; i++) {
               newtask = '<div class="task">\
@@ -70,15 +65,17 @@
 
 </head>
 <body>
+  <div class="add_task_win" id="add_task_win">
+    <center><h3>Добавление задачи</h3>
+    <input type="text" name="" class="task_name" placeholder="Текст задачи">
+    <button type="button" class="write_task_bt" name="button">Добавить задачу</button></center>
+  </div>
   <div class="tabs" id="tabs">
     <button type="button" onclick="add(plans)" class="add_bt" name="button"><img width="30px" height="30px" src="img/add.png"></button>
   </div>
 
   <div class="main" id='main'>
-    <button type="button" class="task_bt" onclick="add_task()" name="button">Добавить задачу</button>
-    <div class="tasks" id="tasks">
 
-    </div>
   </div>
   <div class="menu" id="menu">
     <button type="button" class="del_bt" id="del_bt" onclick="del()" name="button"><img src="img/trash.png"></button>
