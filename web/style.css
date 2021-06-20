@@ -121,6 +121,8 @@ p, h1, h2, h3, h4, a, button{
   height: 200px;
   background: #545454;
   border-radius: 10px;
+  display: none;
+  transition: display 0.5s;
 }
 .task_name{
   background-color: #C4C4C4;
@@ -134,11 +136,18 @@ p, h1, h2, h3, h4, a, button{
   height: 40px;
   border: 0px;
   margin-top: 10px;
-  transition: background-color 1s;
+  transition: background-color 0.5s;
 }
 .write_task_bt:hover{
   background-color: #969696;
 }
 .add_task_win h3{
   color: white;
+}
+.close_bt{
+  border: 0px;
+  background: none;
+  color: white;
+  margin-top: 10px;
+  font-size: 15px;
 }

@@ -75,5 +75,9 @@ function del(name) {
     document.getElementById('main').innerHTML = ''
 }
 function add_task(name) {
-  
+  document.getElementById('add_task_win').style = 'display: block;'
+
+}
+function close_win() {
+  document.getElementById('add_task_win').style = 'display: none;'
 }
