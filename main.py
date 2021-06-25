@@ -50,6 +50,12 @@ def load_tasks(name):
 
     eel.load_tasks(tasks)
 
+@eel.expose
+def write_file_task(name, task):
+    with open(path + name + format, 'a') as f:
+        f.write(task + '\n')
+
+    load_tasks(name)
 
 
 eel.start('main.html', size=(720, 480))

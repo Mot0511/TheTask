@@ -48,11 +48,11 @@
         }}
         eel.expose(load_tasks)
         function load_tasks(tasks) {
-
             document.getElementById('tasks').innerHTML = ''
             for (var i = 0; i < tasks.length; i++) {
               newtask = '<div class="task">\
               <h3>'+ tasks[i] +'</h3>\
+              <button type="button" class="del_task_bt" name="button"><img src="img/trash.png"></button>\
               </div>\
               '
               oldtasks = document.getElementById('tasks').innerHTML
@@ -67,8 +67,8 @@
 <body>
   <div class="add_task_win" id="add_task_win">
     <center><h3>Добавление задачи</h3>
-    <input type="text" name="" class="task_name" placeholder="Текст задачи">
-    <button type="button" class="write_task_bt" onclick="write_task()" name="button">Добавить задачу</button>
+    <input type="text" name="" id="input_task" class="task_name" placeholder="Текст задачи">
+    <button type="button" class="write_task_bt" id="write_task_bt" onclick="write_task('')" name="button">Добавить задачу</button>
     <button type="button" class="close_bt" onclick="close_win()" name="button">Закрыть окно</button></center>
   </div>
   <div class="tabs" id="tabs">
@@ -76,7 +76,6 @@
   </div>
 
   <div class="main" id='main'>
-
   </div>
   <div class="menu" id="menu">
     <button type="button" class="del_bt" id="del_bt" onclick="del()" name="button"><img src="img/trash.png"></button>

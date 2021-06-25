@@ -64,6 +64,7 @@ function output(name) {
     </div>\
     '
     document.getElementById('main').innerHTML = main_content
+    document.getElementById('write_task_bt').setAttribute('onclick', 'write_task(\''+ name +'\')')
     eel.load_tasks(name)
 
 }
@@ -80,4 +81,8 @@ function add_task(name) {
 }
 function close_win() {
   document.getElementById('add_task_win').style = 'display: none;'
+}
+function write_task(name) {
+  task = document.getElementById('input_task').value
+  eel.write_file_task(name, task)
 }
