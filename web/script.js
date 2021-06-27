@@ -9,7 +9,7 @@ function add(plans2) {
         <img src="img/pencil.png" alt="">\
       </button>\
     </div>\
-    ';
+  ';
     oldtabs = document.getElementById('tabs').innerHTML;
     document.getElementById('tabs').innerHTML = oldtabs + tab;
     isft = false
@@ -55,6 +55,9 @@ function rename(oldname, idname) {
     console.log(oldname + ' ' + filename)
     eel.savename(fileoldname, filename);
     isrename = true;
+    document.getElementById('tab' + idname).setAttribute('onclick', 'output(\''+ newname +'\')')
+    document.getElementById('rename_bt' + idname).setAttribute('onclick', 'rename(\''+ newname +', '+ idname +'\')')
+
   }
 }
 function output(name) {
